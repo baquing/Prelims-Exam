@@ -3,308 +3,345 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Student Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .status-present {
-            color: white;
-            background-color: green;
-            padding: 2px 10px;
-            border-radius: 10px;
+        body {
+            background: #f8f9fa;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        .status-absent {
-            color: white;
-            background-color: red;
-            padding: 2px 10px;
-            border-radius: 10px;
+        .student-card {
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 260px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+        }
+
+        .student-card img {
+            width: 100%;
+            height: 140px;
+            background-color: #dee2e6;
+            object-fit: contain;
+        }
+
+        .section-header {
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-header span {
+            margin-left: 8px;
+            font-size: 1rem;
+            padding: 0 10px;
+            border-radius: 6px;
+        }
+
+        .border-primary {
+            border-color: #0d6efd !important;
+        }
+
+        .border-success {
+            border-color: #198754 !important;
+        }
+
+        .border-danger {
+            border-color: #dc3545 !important;
+        }
+
+        .btn-action {
+            min-width: 90px;
+        }
+
+        .dropdown-menu {
+            min-width: 100%;
+        }
+
+        .badge {
+            font-size: 1rem;
+            padding: 0.45em 0.8em;
+        }
+
+        @media (max-width: 991px) {
+            .section-header {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
 
 <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="container">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh3WRuGYDBpFUbZMH7se086UPCz_H6JfAPmA&s" alt="dct.logo" style="width: 40px; height: 40px; margin-left: -200px;">
+            <img src="#" alt="dct.logo"
+                style="width: 40px; height: 40px; margin-left: -200px;">
             <a class="navbar-brand" href="#">Group No. 2</a>
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active fw-bold text-success" href="students.html" aria-current="page">Students</a>
+                        <a class="nav-link" href="students.html">Students</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="attendance.html">Attendance</a>
+                        <a class="nav-link active fw-bold text-success" href="attendance.html" aria-current="page">Attendance</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="form.html">Form</a>
                     </li>
+                </ul>
+                <form class="d-flex my-2 my-lg-0">
+                    <input class="form-control me-sm-2" type="text" placeholder="Search" />
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                        Search
+                    </button>
+                </form>
             </div>
-            </li>
-            </ul>
-            <form class="d-flex my-2 my-lg-0">
-                <input class="form-control me-sm-2" type="text" placeholder="Search" />
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-                    Search
-                </button>
-            </form>
         </div>
-        </div>
-
-
     </nav>
 
-
-    <div class="container my-4">
-        <div class="row g-3">
-            <div class="col-md-4">
-                <div class="card text-white bg-primary">
-                    <div class="card-body">
-                        <h5 class="card-title">10</h5>
-                        <p class="card-text">Total Students</p>
-                        <a href="#" class="btn btn-light btn-sm">Add Student</a>
+    <div class="container py-4">
+        <!-- Students Section -->
+        <div class="mb-4">
+            <div class="d-flex align-items-center mb-3">
+                <span class="section-header text-primary">Students</span>
+                <span class="badge bg-primary ms-2">3</span>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="student-card border-primary">
+                        <img src="https://via.placeholder.com/300x150" alt="Profile">
+                        <div class="p-2 text-center">
+                            <strong>John Doe</strong><br>
+                            <small>STUD101001</small>
+                            <div class="mt-2">
+                                <div class="dropdown">
+                                    <button class="btn btn-primary btn-sm dropdown-toggle btn-action" type="button"
+                                        data-bs-toggle="dropdown">
+                                        Action
+                                    </button>
+                                    <ul class="dropdown-menu w-100">
+                                        <li><a class="dropdown-item" href="#">Present</a></li>
+                                        <li><a class="dropdown-item" href="#">Absent</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="student-card border-primary">
+                        <img src="#" alt="Profile">
+                        <div class="p-2 text-center">
+                            <strong>Jane Smith</strong><br>
+                            <small>STU2025002</small>
+                            <div class="mt-2">
+                                <div class="dropdown">
+                                    <button class="btn btn-primary btn-sm dropdown-toggle btn-action" type="button"
+                                        data-bs-toggle="dropdown">
+                                        Action
+                                    </button>
+                                    <ul class="dropdown-menu w-100">
+                                        <li><a class="dropdown-item" href="#">Present</a></li>
+                                        <li><a class="dropdown-item" href="#">Absent</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="student-card border-primary">
+                        <img src="https://via.placeholder.com/300x150" alt="Profile">
+                        <div class="p-2 text-center">
+                            <strong>Michael Brown</strong><br>
+                            <small>STU2025003</small>
+                            <div class="mt-2">
+                                <div class="dropdown">
+                                    <button class="btn btn-primary btn-sm dropdown-toggle btn-action" type="button"
+                                        data-bs-toggle="dropdown">
+                                        Action
+                                    </button>
+                                    <ul class="dropdown-menu w-100">
+                                        <li><a class="dropdown-item" href="#">Present</a></li>
+                                        <li><a class="dropdown-item" href="#">Absent</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card text-white bg-success">
-                    <div class="card-body">
-                        <h5 class="card-title">3</h5>
-                        <p class="card-text">Total Present</p>
-                        <a href="#" class="btn btn-light btn-sm">See More…</a>
+        </div>
+
+        <!-- Present Section -->
+        <div class="mb-4">
+            <div class="d-flex align-items-center mb-3">
+                <span class="section-header text-success">Present</span>
+                <span class="badge bg-success ms-2">3</span>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="student-card border-success">
+                        <img src="#" alt="Profile">
+                        <div class="p-2 text-center">
+                            <strong>Chris Johnson</strong><br>
+                            <small>STU2025005</small>
+                            <div class="mt-2">
+                                <div class="dropdown">
+                                    <button class="btn btn-success btn-sm dropdown-toggle btn-action" type="button"
+                                        data-bs-toggle="dropdown">
+                                        Action
+                                    </button>
+                                    <ul class="dropdown-menu w-100">
+                                        <li><a class="dropdown-item" href="#">Absent</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="student-card border-success">
+                        <img src="https://via.placeholder.com/300x150" alt="Profile">
+                        <div class="p-2 text-center">
+                            <strong>David Clark</strong><br>
+                            <small>STU2025007</small>
+                            <div class="mt-2">
+                                <div class="dropdown">
+                                    <button class="btn btn-success btn-sm dropdown-toggle btn-action" type="button"
+                                        data-bs-toggle="dropdown">
+                                        Action
+                                    </button>
+                                    <ul class="dropdown-menu w-100">
+                                        <li><a class="dropdown-item" href="#">Absent</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="student-card border-success">
+                        <img src="https://via.placeholder.com/300x150" alt="Profile">
+                        <div class="p-2 text-center">
+                            <strong>Ryan Martinez</strong><br>
+                            <small>STU2025009</small>
+                            <div class="mt-2">
+                                <div class="dropdown">
+                                    <button class="btn btn-success btn-sm dropdown-toggle btn-action" type="button"
+                                        data-bs-toggle="dropdown">
+                                        Action
+                                    </button>
+                                    <ul class="dropdown-menu w-100">
+                                        <li><a class="dropdown-item" href="#">Absent</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card text-white bg-danger">
-                    <div class="card-body">
-                        <h5 class="card-title">4</h5>
-                        <p class="card-text">Total Absent</p>
-                        <a href="#" class="btn btn-light btn-sm">See More…</a>
+        </div>
+
+        <!-- Absent Section -->
+        <div class="mb-4">
+            <div class="d-flex align-items-center mb-3">
+                <span class="section-header text-danger">Absent</span>
+                <span class="badge bg-danger ms-2">4</span>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <div class="student-card border-danger">
+                        <img src="https://via.placeholder.com/300x150" alt="Profile">
+                        <div class="p-2 text-center">
+                            <strong>Emily Davis</strong><br>
+                            <small>STU2025004</small>
+                            <div class="mt-2">
+                                <div class="dropdown">
+                                    <button class="btn btn-danger btn-sm dropdown-toggle btn-action" type="button"
+                                        data-bs-toggle="dropdown">
+                                        Action
+                                    </button>
+                                    <ul class="dropdown-menu w-100">
+                                        <li><a class="dropdown-item" href="#">Present</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="student-card border-danger">
+                        <img src="https://via.placeholder.com/300x150" alt="Profile">
+                        <div class="p-2 text-center">
+                            <strong>Sarah Lee</strong><br>
+                            <small>STU2025006</small>
+                            <div class="mt-2">
+                                <div class="dropdown">
+                                    <button class="btn btn-danger btn-sm dropdown-toggle btn-action" type="button"
+                                        data-bs-toggle="dropdown">
+                                        Action
+                                    </button>
+                                    <ul class="dropdown-menu w-100">
+                                        <li><a class="dropdown-item" href="#">Present</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="student-card border-danger">
+                        <img src="https://via.placeholder.com/300x150" alt="Profile">
+                        <div class="p-2 text-center">
+                            <strong>Laura Wilson</strong><br>
+                            <small>STU2025008</small>
+                            <div class="mt-2">
+                                <div class="dropdown">
+                                    <button class="btn btn-danger btn-sm dropdown-toggle btn-action" type="button"
+                                        data-bs-toggle="dropdown">
+                                        Action
+                                    </button>
+                                    <ul class="dropdown-menu w-100">
+                                        <li><a class="dropdown-item" href="#">Present</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="student-card border-danger">
+                        <img src="https://via.placeholder.com/300x150" alt="Profile">
+                        <div class="p-2 text-center">
+                            <strong>Alice Taylor</strong><br>
+                            <small>STU2025010</small>
+                            <div class="mt-2">
+                                <div class="dropdown">
+                                    <button class="btn btn-danger btn-sm dropdown-toggle btn-action" type="button"
+                                        data-bs-toggle="dropdown">
+                                        Action
+                                    </button>
+                                    <ul class="dropdown-menu w-100">
+                                        <li><a class="dropdown-item" href="#">Present</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-
-    <div class="container">
-        <div class="table-responsive">
-            <table class="table table-bordered table-hover">
-                <thead class="table-light">
-                    <tr>
-                        <th>No.</th>
-                        <th>Student No.</th>
-                        <th>Name</th>
-                        <th>Status</th>
-                        <th>Gender</th>
-                        <th>Civil Status</th>
-                        <th>Nationality</th>
-                        <th>Date of Birth</th>
-                        <th>Place of Birth</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>STU2025001</td>
-                        <td>John Doe</td>
-                        <td><span class="status-absent">Absent</span></td>
-                        <td>Male</td>
-                        <td>Single</td>
-                        <td>Filipino</td>
-                        <td>January 1, 2000</td>
-                        <td>Street, Barang</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>STU2025002</td>
-                        <td>Jane Smith</td>
-                        <td><span class="status-absent">Absent</span></td>
-                        <td>Female</td>
-                        <td>Single</td>
-                        <td>Filipino</td>
-                        <td>January 1, 2000</td>
-                        <td>Street, Barang</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>STU2025003</td>
-                        <td>Michael Brown</td>
-                        <td><span class="status-present">Present</span></td>
-                        <td>Male</td>
-                        <td>Single</td>
-                        <td>Filipino</td>
-                        <td>January 1, 2000</td>
-                        <td>Street, Barang</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>STU2025004</td>
-                        <td>Emily Davis</td>
-                        <td><span class="status-absent">Absent</span></td>
-                        <td>Female</td>
-                        <td>Single</td>
-                        <td>Filipino</td>
-                        <td>January 1, 2000</td>
-                        <td>Street, Barang</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>STU2025005</td>
-                        <td>Chris Johnson</td>
-                        <td><span class="status-present">Present</span></td>
-                        <td>Male</td>
-                        <td>Single</td>
-                        <td>Filipino</td>
-                        <td>January 1, 2000</td>
-                        <td>Street, Barang</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>STU2025006</td>
-                        <td>Sarah Lee</td>
-                        <td><span class="status-present">Present</span></td>
-                        <td>Female</td>
-                        <td>Single</td>
-                        <td>Filipino</td>
-                        <td>January 1, 2000</td>
-                        <td>Street, Barang</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>STU2025007</td>
-                        <td>David Clark</td>
-                        <td><span class="status-present">Present</span></td>
-                        <td>Male</td>
-                        <td>Single</td>
-                        <td>Filipino</td>
-                        <td>January 1, 2000</td>
-                        <td>Street, Barang</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>STU2025008</td>
-                        <td>Laura Wilson</td>
-                        <td><span class="status-absent">Absent</span></td>
-                        <td>Female</td>
-                        <td>Single</td>
-                        <td>Filipino</td>
-                        <td>January 1, 2000</td>
-                        <td>Street, Barang</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                        <td>STU2025009</td>
-                        <td>Albert Martinez</td>
-                        <td><span class="status-present">Present</span></td>
-                        <td>Male</td>
-                        <td>Single</td>
-                        <td>Filipino</td>
-                        <td>January 1, 2000</td>
-                        <td>Street, Barang</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                        <td>STU2025010</td>
-                        <td>Alice Taylor</td>
-                        <td><span class="status-absent">Absent</span></td>
-                        <td>Female</td>
-                        <td>Single</td>
-                        <td>Filipino</td>
-                        <td>January 1, 2000</td>
-                        <td>Street, Barang</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-
-    <!--deps-->
-    <div id="demo" class="carousel slide" data-bs-ride="carousel">
-
-        <!-- Indicators/dots -->
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-        </div>
-
-        <!-- The slideshow/carousel -->
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://dct.edu.ph/wp-content/uploads/2024/11/CLA-Logo-300x300.png" d-block mx-auto
-                    alt="Los Angeles" class="d-block w-100">
-            </div>
-            <div class="carousel-item">
-                <img src="https://dct.edu.ph/wp-content/uploads/2024/11/CED-Logo-300x300.png" alt="Chicago"
-                    class= "d-block w-100">
-            </div>
-            <div class="carousel-item">
-                <img src="https://dct.edu.ph/wp-content/uploads/2024/11/CHM-Logo-300x300.png" alt="New York"
-                    class="d-block w-100">
-            </div>
-        </div>
-
-        <!-- Left and right controls/icons -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </button>
-    </div>
-
-    <div class="container mb-5">
-        <h4 class="text-center mb-4">PVMGO</h4>
-        <div class="row g-3">
-            <div class="col-md-6">
-                <div class="border p-3 rounded">
-                    <strong>Vision</strong><br>
-                    A God-loving educational community with passion for truth and compassion for humanity.
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="border p-3 rounded">
-                    <strong>Mission</strong><br>
-                    We commit ourselves to promote the truth and holistically transform persons for the service of
-                    humanity.
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="border p-3 rounded">
-                    <strong>Mission</strong><br>
-                    We commit ourselves to promote the truth and holistically transform persons for the service of
-                    humanity.
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="border p-3 rounded">
-                    <strong>Goals, Core Values, and Objectives</strong><br>
-                    We aim to provide a system of cultivating learner-centered practices that promotes the 21st century
-                    skills and a way of life that centers on faith, wisdom, patriotism.
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="border p-3 rounded">
-                    <strong>Faith (Fides)</strong><br>
-                    Practice acquired understanding of Gospel values in every aspect of life.
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="border p-3 rounded">
-                    <strong>Patriotism (Patria)</strong><br>
-                    Inculcate and promote Filipino Christian values.
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="border p-3 rounded">
-                    <strong>Wisdom (Sapientia)</strong><br>
-                    Possess knowledge and skills for effective communication to engage oneself in relevant
-                    research-based socio-cultural issues.
-                </div>
-            </div>
-        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
